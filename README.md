@@ -10,3 +10,12 @@ https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframe
 This class implements an input stream filter for reading files in the ZIP file format. Includes support for both compressed and uncompressed entries.
 
 https://docs.oracle.com/javase/8/docs/api/java/util/zip/ZipInputStream.html
+
+### CURL Request for testing
+
+````
+curl --location 'localhost:8080/file' \
+--form 'file=@"/Users/anilput1/Downloads/test.zip"'
+````
+
+![img.png](img.png)
