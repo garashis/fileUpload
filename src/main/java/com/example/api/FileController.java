@@ -1,4 +1,4 @@
-package com.example.kubernates.api;
+package com.example.api;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
