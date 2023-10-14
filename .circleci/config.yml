@@ -18,8 +18,8 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - hello-spring-mvn-V2-{{ checksum "pom.xml" }}
-            - hello-spring-mvn-V2
+            - fileUpload-{{ checksum "pom.xml" }}
+            - fileUpload
       - run: mvn dependency:go-offline
       - run:
           name: Build and unit test
@@ -33,7 +33,7 @@ jobs:
       - save_cache:
           paths:
             - ~/.m2
-          key: hello-spring-mvn-V2-{{ checksum "pom.xml" }}
+          key: fileUpload-{{ checksum "pom.xml" }}
       - store_test_results:
           path: target/surefire-reports
 
@@ -47,8 +47,8 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - hello-spring-mvn-V2-{{ checksum "pom.xml" }}
-            - hello-spring-mvn-V2
+            - fileUpload-{{ checksum "pom.xml" }}
+            - fileUpload
       - run: mvn dependency:go-offline
       - run: cp .mvn/wrapper/settings.xml ~/.m2/settings.xml
       - run: echo "<settingsSecurity><master>${maven_security_master}</master></settingsSecurity>" > ~/.m2/settings-security.xml
